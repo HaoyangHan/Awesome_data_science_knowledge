@@ -88,13 +88,13 @@ This penalty ensures the model explores new tokens and ideas, contributing to mo
 
 ## Summary Table: Comparison of Hyperparameters
 
-| Hyperparameter      | Formula                                                         | Effect                                                   | Typical Values & Meaning                                         |
-|---------------------|-----------------------------------------------------------------|---------------------------------------------------------|------------------------------------------------------------------|
-| **Temperature (T)**  | \(\text{Logits}_{\text{adjusted}} = \frac{\text{Logits}}{T}\)   | Controls randomness. Low values make output deterministic, high values make output creative. | \(T < 1\): deterministic; \(T = 1\): balanced; \(T > 1\): creative |
-| **Top-k Sampling**   | \(\text{Logits}_{\text{adjusted}} = \frac{e^{\text{Logits}_i}}{\sum_{j \in \text{Top-}k} e^{\text{Logits}_j}}\) | Restricts the model to the top k most probable tokens.   | \(k = 10\) to \(k = 50\), commonly used for more controlled diversity |
-| **Top-p Sampling**   | \(\text{P}(w_i) = \frac{e^{\text{Logits}_i}}{\sum_{j \in \text{Top-p subset}} e^{\text{Logits}_j}}\) | Ensures diversity by selecting the smallest set of tokens whose cumulative probability is greater than \(p\). | \(p = 0.9\) is common; higher \(p\) increases diversity but may lower coherence |
-| **Frequency Penalty (F)** | \(\text{Logits}_{\text{penalized}} = \text{Logits}_i - F \cdot \text{count}(w_i)\) | Reduces the probability of repeating tokens.            | \(F = 0.5\) to \(F = 2\), higher values discourage repetition |
-| **Presence Penalty (P)** | \(\text{Logits}_{\text{penalized}} = \text{Logits}_i - P \cdot \mathbf{1}[\text{token exists in sequence}]\) | Encourages new tokens and concepts.                    | \(P = 0.5\) to \(P = 1\), higher values introduce more variety |
+| **Hyperparameter**        | **Effect**                                                               | **Typical Values & Meaning**                                                   |
+|---------------------------|-------------------------------------------------------------------------|--------------------------------------------------------------------------------|
+| **Temperature (T)**        | Controls randomness. Low values make output deterministic, high values make output creative. | T < 1: deterministic; T = 1: balanced; T > 1: creative                         |
+| **Top-k Sampling**         | Restricts the model to the top k most probable tokens.                   | k = 10 to k = 50, commonly used for more controlled diversity                   |
+| **Top-p Sampling**         | Ensures diversity by selecting the smallest set of tokens whose cumulative probability is greater than p. | p = 0.9 is common; higher p increases diversity but may lower coherence         |
+| **Frequency Penalty (F)**  | Reduces the probability of repeating tokens.                             | F = 0.5 to F = 2, higher values discourage repetition                          |
+| **Presence Penalty (P)**   | Encourages new tokens and concepts.                                     | P = 0.5 to P = 1, higher values introduce more variety                          |
 
 ---
 
