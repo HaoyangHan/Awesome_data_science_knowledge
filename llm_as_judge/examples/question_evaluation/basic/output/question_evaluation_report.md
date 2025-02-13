@@ -1,5 +1,6 @@
 # Question Evaluation Analysis Report
 ## Score Statistics
+
 ### LLM Generated Score Statistics:
 ```
 count    35.000000
@@ -24,8 +25,28 @@ min       0.520000
 max       0.940000
 ```
 
-## Score Correlation
-Correlation between LLM and Human scores: -0.031
+## Comprehensive Evaluation Metrics
+
+### Agreement Metrics
+```
+Agreement Score: 0.314
+Rank Correlation: 0.007
+Cohen's Kappa: 0.036
+```
+
+## Bias Analysis
+
+### LLM Generated Score
+```
+Position Bias: -0.043
+Length Bias: 0.096
+```
+
+### Human Evaluation Score
+```
+Position Bias: 0.014
+Length Bias: -0.271
+```
 
 ## High Agreement Examples
 

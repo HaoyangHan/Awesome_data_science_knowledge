@@ -3,6 +3,7 @@ from pathlib import Path
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
+from llm_as_judge.metrics.evaluation_metrics import EvaluationMetrics
 
 def analyze_answer_evaluation(data_path: str, output_dir: Path):
     """Basic analysis of answer evaluation data.
@@ -16,6 +17,8 @@ def analyze_answer_evaluation(data_path: str, output_dir: Path):
     
     # Get metric columns
     metrics = ['Stand-alone Quality', 'Readiness', 'Relevance', 'Completeness']
+    llm_columns = [f'LLM {m}' for m in metrics]
+    human_columns = [f'Human {m}' for m in metrics]
     
     # Initialize report
     report = ["# Answer Evaluation Analysis Report\n"]
@@ -38,17 +41,35 @@ def analyze_answer_evaluation(data_path: str, output_dir: Path):
         print(human_stats)
         report.extend(["\n#### Human Scores:\n```\n", human_stats.to_string(), "\n```\n"])
     
-    # Calculate correlations
-    print("\n=== LLM-Human Score Correlations ===")
-    report.extend(["\n## LLM-Human Score Correlations\n"])
-    correlations = []
-    for metric in metrics:
-        correlation = df[f'LLM {metric}'].corr(df[f'Human {metric}'])
-        print(f"{metric}: {correlation:.3f}")
-        correlations.append({"Metric": metric, "Correlation": correlation})
+    # Calculate comprehensive metrics
+    comprehensive_metrics = EvaluationMetrics.generate_comprehensive_metrics(
+        df, llm_columns, human_columns
+    )
     
-    corr_df = pd.DataFrame(correlations)
-    report.extend(["\n```\n", corr_df.to_string(), "\n```\n"])
+    # Add comprehensive metrics to report
+    report.extend(["\n## Comprehensive Evaluation Metrics\n"])
+    
+    for metric_name, metric_values in comprehensive_metrics.items():
+        if metric_name != 'bias':
+            report.extend([
+                f"\n### {metric_name}\n",
+                "```\n",
+                f"Agreement Score: {metric_values['agreement']:.3f}\n",
+                f"Rank Correlation: {metric_values['rank_correlation']:.3f}\n",
+                f"Cohen's Kappa: {metric_values['cohens_kappa']:.3f}\n",
+                "```\n"
+            ])
+    
+    # Add bias analysis
+    report.extend(["\n## Bias Analysis\n"])
+    for col, bias_values in comprehensive_metrics['bias'].items():
+        report.extend([
+            f"\n### {col}\n",
+            "```\n",
+            f"Position Bias: {bias_values['position_bias']:.3f}\n",
+            f"Length Bias: {bias_values['length_bias']:.3f}\n",
+            "```\n"
+        ])
     
     # Plot score distributions
     plt.figure(figsize=(15, 10))
@@ -63,6 +84,22 @@ def analyze_answer_evaluation(data_path: str, output_dir: Path):
     
     plt.tight_layout()
     plt.savefig(output_dir / 'answer_score_distributions.png')
+    plt.close()
+    
+    # Plot bias analysis
+    plt.figure(figsize=(12, 6))
+    
+    # Position bias plot
+    plt.subplot(1, 2, 1)
+    for col in llm_columns:
+        plt.scatter(range(len(df)), df[col], alpha=0.5, label=col)
+    plt.title('Position Bias Analysis')
+    plt.xlabel('Answer Position')
+    plt.ylabel('Score')
+    plt.legend(bbox_to_anchor=(1.05, 1), loc='upper left')
+    
+    plt.tight_layout()
+    plt.savefig(output_dir / 'bias_analysis.png')
     plt.close()
     
     # Find high quality answers

@@ -105,14 +105,84 @@ min       1.600000
 max       5.000000
 ```
 
-## LLM-Human Score Correlations
+## Comprehensive Evaluation Metrics
 
+### Stand-alone Quality
 ```
-                Metric  Correlation
-0  Stand-alone Quality     0.457731
-1            Readiness     0.675163
-2            Relevance     0.634598
-3         Completeness     0.605270
+Agreement Score: 0.050
+Rank Correlation: 0.528
+Cohen's Kappa: 0.152
+```
+
+### Readiness
+```
+Agreement Score: 0.100
+Rank Correlation: 0.654
+Cohen's Kappa: 0.154
+```
+
+### Relevance
+```
+Agreement Score: 0.075
+Rank Correlation: 0.668
+Cohen's Kappa: 0.347
+```
+
+### Completeness
+```
+Agreement Score: 0.025
+Rank Correlation: 0.519
+Cohen's Kappa: 0.188
+```
+
+## Bias Analysis
+
+### LLM Stand-alone Quality
+```
+Position Bias: 0.115
+Length Bias: -0.179
+```
+
+### LLM Readiness
+```
+Position Bias: 0.125
+Length Bias: -0.285
+```
+
+### LLM Relevance
+```
+Position Bias: 0.270
+Length Bias: -0.288
+```
+
+### LLM Completeness
+```
+Position Bias: 0.064
+Length Bias: -0.260
+```
+
+### Human Stand-alone Quality
+```
+Position Bias: 0.166
+Length Bias: -0.206
+```
+
+### Human Readiness
+```
+Position Bias: 0.060
+Length Bias: -0.205
+```
+
+### Human Relevance
+```
+Position Bias: 0.186
+Length Bias: -0.219
+```
+
+### Human Completeness
+```
+Position Bias: 0.354
+Length Bias: -0.254
 ```
 
 ## High Quality Answer Examples
