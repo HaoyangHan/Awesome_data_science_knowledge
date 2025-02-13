@@ -36,12 +36,6 @@ ENV/
 # Jupyter Notebook
 .ipynb_checkpoints
 
-# Output files
-outputs/
-**/output/
-*.png
-*.pdf
-
 # OS
 .DS_Store
 .DS_Store?
