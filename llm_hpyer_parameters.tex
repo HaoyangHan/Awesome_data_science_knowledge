@@ -98,6 +98,26 @@ This penalty ensures the model explores new tokens and ideas, contributing to mo
 \end{tabular}
 \end{center}
 
+\begin{table}[h!]
+    \centering
+    \begin{tabular}{|l|l|l|l|}
+    \hline
+    \textbf{Hyperparameter} & \textbf{Formula} & \textbf{Effect} & \textbf{Typical Values \& Meaning} \\
+    \hline
+    \textbf{Temperature (T)} & \( \text{Logits}_{\text{adjusted}} = \frac{\text{Logits}}{T} \) & Controls randomness. Low values make output deterministic, high values make output creative. & \( T < 1 \): deterministic; \( T = 1 \): balanced; \( T > 1 \): creative \\
+    \hline
+    \textbf{Top-k Sampling} & \( \text{Logits}_{\text{adjusted}} = \frac{e^{\text{Logits}_i}}{\sum_{j \in \text{Top-}k} e^{\text{Logits}_j}} \) & Restricts the model to the top k most probable tokens. & \( k = 10 \) to \( k = 50 \), commonly used for more controlled diversity \\
+    \hline
+    \textbf{Top-p Sampling} & \( P(w_i) = \frac{e^{\text{Logits}_i}}{\sum_{j \in \text{Top-p subset}} e^{\text{Logits}_j}} \) & Ensures diversity by selecting the smallest set of tokens whose cumulative probability is greater than \( p \). & \( p = 0.9 \) is common; higher \( p \) increases diversity but may lower coherence \\
+    \hline
+    \textbf{Frequency Penalty (F)} & \( \text{Logits}_{\text{penalized}} = \text{Logits}_i - F \cdot \text{count}(w_i) \) & Reduces the probability of repeating tokens. & \( F = 0.5 \) to \( F = 2 \), higher values discourage repetition \\
+    \hline
+    \textbf{Presence Penalty (P)} & \( \text{Logits}_{\text{penalized}} = \text{Logits}_i - P \cdot \mathbf{1}[\text{token exists in sequence}] \) & Encourages new tokens and concepts. & \( P = 0.5 \) to \( P = 1 \), higher values introduce more variety \\
+    \hline
+    \end{tabular}
+    \caption{Comparison of Hyperparameters}
+    \end{table}
+
 \section*{Conclusion}
 
 Understanding and tuning these hyperparameters can drastically influence the behavior of language models. \textbf{Temperature} stands out as one of the most important parameters for controlling output creativity versus coherence. By manipulating \textbf{top-k}, \textbf{top-p}, and the penalty parameters, we can further refine and shape the model's behavior to suit specific use cases.
