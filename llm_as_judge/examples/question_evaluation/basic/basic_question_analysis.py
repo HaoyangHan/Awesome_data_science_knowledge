@@ -5,6 +5,8 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 from llm_as_judge.metrics.evaluation_metrics import EvaluationMetrics
 from llm_as_judge.metrics.metrics_recorder import MetricsRecorder
+from llm_as_judge.score_analysis.score_distribution_analyzer import ScoreDistributionAnalyzer
+import numpy as np
 
 def analyze_question_evaluation(data_path: str, output_dir: Path):
     """Basic analysis of question evaluation data.
@@ -35,6 +37,46 @@ def analyze_question_evaluation(data_path: str, output_dir: Path):
     print(human_stats)
     report.extend(["\n### Human Evaluation Score Statistics:\n```\n", human_stats.to_string(), "\n```\n"])
     all_metrics.update({f"human_evaluation_score_{k}": v for k, v in human_stats.to_dict().items()})
+    
+    # New: Distribution Analysis
+    llm_scores = df['LLM Generated Score'].values
+    human_scores = df['Human Evaluation Score'].values
+    dist_analyzer = ScoreDistributionAnalyzer(llm_scores, human_scores)
+    
+    # Analyze distributions
+    dist_analysis = dist_analyzer.analyze_distributions()
+    report.extend([
+        "\n## Distribution Analysis\n",
+        "```\n",
+        f"LLM Stats: {dist_analysis['llm_stats']}\n",
+        f"Human Stats: {dist_analysis['human_stats']}\n",
+        f"KS Test: {dist_analysis['ks_test']}\n",
+        "```\n"
+    ])
+    all_metrics.update({
+        'score_distribution': dist_analysis
+    })
+    
+    # Generate normalized plots and analysis
+    for norm_method in ['zscore', 'minmax', 'robust']:
+        norm_plot_path = output_dir / f'score_{norm_method}_normalized.png'
+        dist_analyzer.plot_distributions(
+            str(norm_plot_path),
+            normalized=True,
+            method=norm_method,
+            title=f'{norm_method.capitalize()} Normalized Score Distributions'
+        )
+        
+        norm_diff = dist_analyzer.get_normalization_differences(method=norm_method)
+        report.extend([
+            f"\n### {norm_method.capitalize()} Normalization Differences\n",
+            "```\n",
+            f"{norm_diff}\n",
+            "```\n"
+        ])
+        all_metrics.update({
+            f'score_{norm_method}_differences': norm_diff
+        })
     
     # Calculate comprehensive metrics
     comprehensive_metrics = EvaluationMetrics.generate_comprehensive_metrics(

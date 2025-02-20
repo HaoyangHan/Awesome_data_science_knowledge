@@ -2,6 +2,8 @@ import os
 from pathlib import Path
 from llm_as_judge.answer_evaluation import AnswerEvaluationAnalyzer
 from llm_as_judge.metrics.metrics_recorder import MetricsRecorder
+from llm_as_judge.score_analysis.score_distribution_analyzer import ScoreDistributionAnalyzer
+import numpy as np
 
 def main():
     # Get the project root directory
@@ -51,12 +53,54 @@ def main():
     analyzer.plot_score_distributions(str(plot_path))
     print(f"Score distribution plot saved to: {plot_path}")
     
-    # 5. Generate comprehensive report
+    # 5. New: Analyze score distributions and normalization
+    print("\n=== Score Distribution Analysis ===")
+    metrics = ['Stand-alone Quality', 'Readiness', 'Relevance', 'Completeness']
+    df = analyzer.data
+    
+    for metric in metrics:
+        llm_scores = df[f'LLM {metric}'].values
+        human_scores = df[f'Human {metric}'].values
+        
+        dist_analyzer = ScoreDistributionAnalyzer(llm_scores, human_scores)
+        
+        # Analyze raw distributions
+        dist_analysis = dist_analyzer.analyze_distributions()
+        print(f"\n{metric} Distribution Analysis:")
+        print(f"LLM Stats: {dist_analysis['llm_stats']}")
+        print(f"Human Stats: {dist_analysis['human_stats']}")
+        print(f"KS Test: {dist_analysis['ks_test']}")
+        
+        # Store distribution metrics
+        all_metrics.update({
+            f"{metric.lower().replace('-', '_')}_distribution": dist_analysis
+        })
+        
+        # Generate normalized distribution plots
+        for norm_method in ['zscore', 'minmax', 'robust']:
+            # Plot normalized distributions
+            norm_plot_path = output_dir / f'{metric.lower().replace(" ", "_")}_{norm_method}_normalized.png'
+            dist_analyzer.plot_distributions(
+                str(norm_plot_path),
+                normalized=True,
+                method=norm_method,
+                title=f'{metric} - {norm_method.capitalize()} Normalized Distributions'
+            )
+            
+            # Calculate and store normalization differences
+            norm_diff = dist_analyzer.get_normalization_differences(method=norm_method)
+            all_metrics.update({
+                f"{metric.lower().replace('-', '_')}_{norm_method}_differences": norm_diff
+            })
+            print(f"\n{metric} - {norm_method} Normalization Differences:")
+            print(norm_diff)
+    
+    # 6. Generate comprehensive report
     report_path = output_dir / 'evaluation_report.md'
     analyzer.generate_report(str(report_path))
     print(f"\nComprehensive report generated at: {report_path}")
     
-    # 6. Record all metrics
+    # 7. Record all metrics
     metrics_recorder.record_metrics(all_metrics)
     print(f"\nMetrics recorded in: {metrics_recorder.output_path}")
 

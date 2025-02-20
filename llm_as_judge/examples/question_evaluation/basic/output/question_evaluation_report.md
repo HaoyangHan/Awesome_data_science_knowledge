@@ -25,6 +25,28 @@ min       0.520000
 max       0.940000
 ```
 
+## Distribution Analysis
+```
+LLM Stats: {'mean': np.float64(0.7277142857142858), 'std': np.float64(0.14784327057076768), 'median': np.float64(0.72), 'skewness': np.float64(0.27118952095742066), 'kurtosis': np.float64(-1.1751567519563864)}
+Human Stats: {'mean': np.float64(0.7154285714285715), 'std': np.float64(0.13751556498173176), 'median': np.float64(0.7), 'skewness': np.float64(0.19194605530178152), 'kurtosis': np.float64(-1.3217295120506165)}
+KS Test: {'statistic': np.float64(0.11428571428571428), 'pvalue': np.float64(0.9793840108821031)}
+```
+
+### Zscore Normalization Differences
+```
+{'mean_diff': np.float64(3.7430376258790997e-16), 'std_diff': np.float64(0.0), 'median_diff': np.float64(0.06001628316282926), 'range_diff': np.float64(0.124842506630082), 'ks_statistic': np.float64(0.11428571428571428)}
+```
+
+### Minmax Normalization Differences
+```
+{'mean_diff': np.float64(-0.0020842379504995012), 'std_diff': np.float64(-0.012857861710696583), 'median_diff': np.float64(0.018237082066869303), 'range_diff': np.float64(0.0), 'ks_statistic': np.float64(0.08571428571428572)}
+```
+
+### Robust Normalization Differences
+```
+{'mean_diff': np.float64(-0.029571428571428693), 'std_diff': np.float64(0.06595136745127128), 'median_diff': np.float64(0.0), 'range_diff': np.float64(0.27833333333333243), 'ks_statistic': np.float64(0.11428571428571428)}
+```
+
 ## Comprehensive Evaluation Metrics
 
 ### Agreement Metrics
