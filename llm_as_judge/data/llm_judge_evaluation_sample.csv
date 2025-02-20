@@ -1,0 +1,36 @@
+Ground Truth Question,LLM Generated Question,LLM Generated Score,Human Evaluation Score
+How should I create a human interactive machine?,In what way should I create a human interactive machine?,0.69,0.86
+What are the key components of artificial intelligence?,What are the key components of artificial intelligence?,0.98,0.64
+How does deep learning differ from machine learning?,How does deep learning differ from machine learning?,0.87,0.54
+What is the role of neural networks in AI?,What is the role of neural networks in AI?,0.8,0.81
+How can we ensure AI systems are ethical?,How can we ensure AI systems are ethical?,0.58,0.7
+What are the applications of natural language processing?,What are the applications of natural language processing?,0.58,0.55
+How do recommendation systems work?,How do recommendation systems work?,0.53,0.72
+What is the future of autonomous vehicles?,What is the future of autonomous vehicles?,0.93,0.52
+How can we implement computer vision systems?,How can we implement computer vision systems?,0.8,0.91
+What are the challenges in robotics development?,What are the challenges in robotics development?,0.85,0.62
+How does reinforcement learning work?,In what way does reinforcement learning work?,0.51,0.8
+What is the impact of AI on healthcare?,What is the impact of AI on healthcwould be?,0.98,0.64
+How can we build sustainable AI systems?,How can we build sustainable AI systems?,0.92,0.73
+What are the best practices for data preprocessing?,What would be the best practices for data preprocessing?,0.61,0.75
+How do we evaluate machine learning models?,How do we evaluate machine learning models?,0.59,0.58
+What is the role of big data in AI?,What is the role of big data in AI?,0.59,0.94
+How can we optimize neural network architectures?,How can we optimize neural network architectures?,0.65,0.85
+What are the principles of responsible AI?,Which are the principles of responsible AI?,0.76,0.92
+How do we handle bias in AI systems?,How do we handle bias in AI systems?,0.72,0.9
+What is the future of human-AI collaboration?,Which is the future of human-AI collaboration?,0.65,0.77
+How can we improve AI model interpretability?,How can we improve AI model interpretability?,0.81,0.91
+What are the challenges in natural language understanding?,Which are the challenges in natural language understanding?,0.57,0.54
+How do we ensure AI privacy and security?,How do we ensure AI privacy and security?,0.65,0.59
+What is the role of edge computing in AI?,What is the role of edge computing in AI?,0.68,0.52
+How can we scale AI systems effectively?,How might we scale AI systems effectively?,0.73,0.65
+What are the best practices for AI deployment?,What are the best practices for AI deployment?,0.89,0.67
+How do we maintain AI systems in production?,How do we maintain AI systems in production?,0.6,0.62
+What is the impact of AI on society?,What is the impact of AI on society?,0.76,0.87
+How can we make AI more energy-efficient?,How can we make AI more energy-efficient?,0.8,0.66
+What are the limitations of current AI systems?,Which are the limitations of current AI systems?,0.52,0.63
+How do we handle uncertainty in AI predictions?,How do we handle uncertainty in AI predictions?,0.8,0.74
+What is the role of transfer learning?,What is the role of transfer learning?,0.59,0.56
+How can we improve AI robustness?,How can we improve AI robustness?,0.53,0.86
+What are the challenges in multi-agent systems?,What are the challenges in multi-agent systems?,0.97,0.53
+How do we evaluate AI system performance?,How do we evaluate AI system performance?,0.98,0.94

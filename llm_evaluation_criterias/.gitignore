@@ -1,0 +1,20 @@
+# Reports and Output
+# example_reports/
+# reports/
+# *.csv
+# *.png
+# *.pdf
+
+# Logs
+# *.log
+# logs/
+
+# Local development
+.DS_Store
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# virtual environment
+.venv/
