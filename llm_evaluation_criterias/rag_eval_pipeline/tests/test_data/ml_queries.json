@@ -1,0 +1,119 @@
+{
+    "test_cases": [
+        {
+            "query": {
+                "query_id": "Q1",
+                "query": "What are neural networks and how do they work?",
+                "expected_relevant_content": "Neural networks are computational models with interconnected layers of neurons that process information and adjust weights during training.",
+                "keywords": ["neural networks", "neurons", "layers", "weights", "training"],
+                "relevance_criteria": {
+                    "must_contain": ["neural networks", "layers"],
+                    "should_contain": ["neurons", "weights", "training"],
+                    "semantic_aspects": ["neural network structure", "basic components"]
+                }
+            },
+            "expected_relevant_docs": ["doc1", "doc3"],
+            "simulated_result": {
+                "query_id": "Q1",
+                "retrieved_documents": [
+                    {"doc1": "Neural networks are computational models inspired by biological neural networks in the human brain. They consist of layers of interconnected nodes (neurons) that process and transmit information."},
+                    {"doc3": "Deep learning architectures are advanced neural networks with multiple hidden layers."},
+                    {"doc5": "Model optimization involves techniques to improve machine learning model performance."}
+                ],
+                "scores": [0.95, 0.75, 0.45]
+            }
+        },
+        {
+            "query": {
+                "query_id": "Q2",
+                "query": "Explain different types of deep learning architectures and their applications",
+                "expected_relevant_content": "Deep learning architectures include CNNs for images, RNNs for sequences, and Transformers for NLP, each specialized for specific tasks.",
+                "keywords": ["deep learning", "CNN", "RNN", "transformers", "architectures"],
+                "relevance_criteria": {
+                    "must_contain": ["deep learning", "architectures"],
+                    "should_contain": ["CNN", "RNN", "transformers"],
+                    "semantic_aspects": ["architecture types", "applications"]
+                }
+            },
+            "expected_relevant_docs": ["doc3", "doc6", "doc7"],
+            "simulated_result": {
+                "query_id": "Q2",
+                "retrieved_documents": [
+                    {"doc3": "Deep learning architectures are advanced neural networks with multiple hidden layers. Popular architectures include Convolutional Neural Networks (CNNs) for image processing, Recurrent Neural Networks (RNNs) for sequential data, and Transformers for natural language processing."},
+                    {"doc6": "Natural Language Processing (NLP) combines linguistics and machine learning to process and analyze human language."},
+                    {"doc7": "Computer vision enables machines to understand and process visual information from the world."}
+                ],
+                "scores": [0.92, 0.78, 0.65]
+            }
+        },
+        {
+            "query": {
+                "query_id": "Q3",
+                "query": "How does transfer learning work and what are its benefits?",
+                "expected_relevant_content": "Transfer learning uses pre-trained models for new tasks, effective when data is limited, through fine-tuning and feature extraction.",
+                "keywords": ["transfer learning", "pre-trained models", "fine-tuning", "feature extraction"],
+                "relevance_criteria": {
+                    "must_contain": ["transfer learning", "pre-trained"],
+                    "should_contain": ["fine-tuning", "feature extraction"],
+                    "semantic_aspects": ["model reuse", "efficiency"]
+                }
+            },
+            "expected_relevant_docs": ["doc9"],
+            "simulated_result": {
+                "query_id": "Q3",
+                "retrieved_documents": [
+                    {"doc9": "Transfer learning leverages knowledge from pre-trained models for new tasks. This approach is particularly effective when labeled data is limited."},
+                    {"doc2": "Supervised learning is a machine learning paradigm where models learn from labeled training data."},
+                    {"doc5": "Model optimization involves techniques to improve machine learning model performance."}
+                ],
+                "scores": [0.94, 0.52, 0.48]
+            }
+        },
+        {
+            "query": {
+                "query_id": "Q4",
+                "query": "What metrics are used to evaluate machine learning models?",
+                "expected_relevant_content": "Common metrics include accuracy, precision, recall, F1-score for classification, MSE and MAE for regression, with cross-validation for generalization.",
+                "keywords": ["evaluation", "metrics", "accuracy", "precision", "cross-validation"],
+                "relevance_criteria": {
+                    "must_contain": ["evaluation", "metrics"],
+                    "should_contain": ["accuracy", "precision", "cross-validation"],
+                    "semantic_aspects": ["model performance", "evaluation methods"]
+                }
+            },
+            "expected_relevant_docs": ["doc10", "doc2"],
+            "simulated_result": {
+                "query_id": "Q4",
+                "retrieved_documents": [
+                    {"doc10": "Model evaluation is crucial in machine learning. Common metrics include accuracy, precision, recall, F1-score for classification, and MSE, MAE for regression."},
+                    {"doc2": "The model's performance is evaluated using metrics like accuracy, precision, and recall on unseen test data."},
+                    {"doc5": "Model optimization involves techniques to improve machine learning model performance."}
+                ],
+                "scores": [0.96, 0.82, 0.55]
+            }
+        },
+        {
+            "query": {
+                "query_id": "Q5",
+                "query": "What is unsupervised learning and what are its main techniques?",
+                "expected_relevant_content": "Unsupervised learning finds patterns in unlabeled data using clustering, dimensionality reduction, and autoencoders.",
+                "keywords": ["unsupervised learning", "clustering", "dimensionality reduction", "PCA", "autoencoders"],
+                "relevance_criteria": {
+                    "must_contain": ["unsupervised learning", "clustering"],
+                    "should_contain": ["dimensionality reduction", "PCA", "autoencoders"],
+                    "semantic_aspects": ["pattern discovery", "data exploration"]
+                }
+            },
+            "expected_relevant_docs": ["doc8"],
+            "simulated_result": {
+                "query_id": "Q5",
+                "retrieved_documents": [
+                    {"doc8": "Unsupervised learning algorithms find patterns in unlabeled data. Common techniques include clustering algorithms like K-means, dimensionality reduction methods like PCA, and autoencoders for feature learning."},
+                    {"doc2": "Supervised learning is a machine learning paradigm where models learn from labeled training data."},
+                    {"doc5": "Model optimization involves techniques to improve machine learning model performance."}
+                ],
+                "scores": [0.93, 0.45, 0.40]
+            }
+        }
+    ]
+} 

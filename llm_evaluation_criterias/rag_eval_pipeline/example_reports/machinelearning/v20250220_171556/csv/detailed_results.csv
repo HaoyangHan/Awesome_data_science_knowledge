@@ -1,0 +1,6 @@
+query_id,query,expected_content,precision_at_k,recall_at_k,mean_average_precision,semantic_similarity,keyword_coverage
+Q1,What are neural networks and how do they work?,Neural networks are computational models with interconnected layers of neurons that process information and adjust weights during training.,0.4,1.0,1.0,0.6101414588364689,0.6
+Q2,Explain different types of deep learning architectures and their applications,"Deep learning architectures include CNNs for images, RNNs for sequences, and Transformers for NLP, each specialized for specific tasks.",0.2,1.0,1.0,0.5285008197480981,1.0
+Q3,How does transfer learning work and what are its benefits?,"Transfer learning uses pre-trained models for new tasks, effective when data is limited, through fine-tuning and feature extraction.",0.2,1.0,1.0,0.4845242283561013,0.5
+Q4,What metrics are used to evaluate machine learning models?,"Common metrics include accuracy, precision, recall, F1-score for classification, MSE and MAE for regression, with cross-validation for generalization.",0.4,1.0,1.0,0.7234565453095869,0.8
+Q5,What is unsupervised learning and what are its main techniques?,"Unsupervised learning finds patterns in unlabeled data using clustering, dimensionality reduction, and autoencoders.",0.2,1.0,1.0,0.5360373746265065,1.0

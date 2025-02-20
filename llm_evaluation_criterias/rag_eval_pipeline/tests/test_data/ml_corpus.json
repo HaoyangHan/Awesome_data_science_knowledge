@@ -1,0 +1,54 @@
+{
+    "documents": {
+        "doc1": {
+            "title": "Introduction to Neural Networks",
+            "content": "Neural networks are computational models inspired by biological neural networks in the human brain. They consist of layers of interconnected nodes (neurons) that process and transmit information. The basic structure includes input layers, hidden layers, and output layers. Each connection between neurons has an associated weight that is adjusted during training.",
+            "keywords": ["neural networks", "neurons", "layers", "weights", "training"]
+        },
+        "doc2": {
+            "title": "Supervised Learning Fundamentals",
+            "content": "Supervised learning is a machine learning paradigm where models learn from labeled training data. The algorithm learns to map inputs to outputs based on example pairs. Common applications include classification and regression tasks. The model's performance is evaluated using metrics like accuracy, precision, and recall on unseen test data.",
+            "keywords": ["supervised learning", "training data", "classification", "regression", "evaluation metrics"]
+        },
+        "doc3": {
+            "title": "Deep Learning Architectures",
+            "content": "Deep learning architectures are advanced neural networks with multiple hidden layers. Popular architectures include Convolutional Neural Networks (CNNs) for image processing, Recurrent Neural Networks (RNNs) for sequential data, and Transformers for natural language processing. Each architecture is specialized for specific types of data and tasks.",
+            "keywords": ["deep learning", "CNN", "RNN", "transformers", "architectures"]
+        },
+        "doc4": {
+            "title": "Reinforcement Learning",
+            "content": "Reinforcement learning is a type of machine learning where agents learn to make decisions by interacting with an environment. The agent receives rewards or penalties based on its actions and aims to maximize cumulative rewards. Key concepts include state, action, reward, and policy. Applications include game playing and robotics.",
+            "keywords": ["reinforcement learning", "agents", "rewards", "policy", "environment"]
+        },
+        "doc5": {
+            "title": "Model Optimization Techniques",
+            "content": "Model optimization involves techniques to improve machine learning model performance. This includes gradient descent algorithms, regularization methods to prevent overfitting, and hyperparameter tuning. Advanced techniques like batch normalization and dropout are commonly used in deep learning models to enhance training stability and generalization.",
+            "keywords": ["optimization", "gradient descent", "regularization", "hyperparameter tuning", "batch normalization"]
+        },
+        "doc6": {
+            "title": "Natural Language Processing",
+            "content": "Natural Language Processing (NLP) combines linguistics and machine learning to process and analyze human language. Key tasks include text classification, named entity recognition, machine translation, and sentiment analysis. Modern NLP systems often use transformer-based models like BERT and GPT for superior performance.",
+            "keywords": ["NLP", "text processing", "BERT", "GPT", "machine translation"]
+        },
+        "doc7": {
+            "title": "Computer Vision Basics",
+            "content": "Computer vision enables machines to understand and process visual information from the world. Fundamental techniques include image preprocessing, feature extraction, and object detection. Convolutional Neural Networks have revolutionized computer vision tasks like image classification, segmentation, and face recognition.",
+            "keywords": ["computer vision", "image processing", "object detection", "CNN", "feature extraction"]
+        },
+        "doc8": {
+            "title": "Unsupervised Learning Methods",
+            "content": "Unsupervised learning algorithms find patterns in unlabeled data. Common techniques include clustering algorithms like K-means, dimensionality reduction methods like PCA, and autoencoders for feature learning. These methods are valuable for data exploration and representation learning.",
+            "keywords": ["unsupervised learning", "clustering", "dimensionality reduction", "PCA", "autoencoders"]
+        },
+        "doc9": {
+            "title": "Transfer Learning",
+            "content": "Transfer learning leverages knowledge from pre-trained models for new tasks. This approach is particularly effective when labeled data is limited. Common strategies include fine-tuning pre-trained models and feature extraction. Transfer learning has revolutionized many applications in computer vision and NLP.",
+            "keywords": ["transfer learning", "pre-trained models", "fine-tuning", "feature extraction", "model adaptation"]
+        },
+        "doc10": {
+            "title": "Model Evaluation and Metrics",
+            "content": "Model evaluation is crucial in machine learning. Common metrics include accuracy, precision, recall, F1-score for classification, and MSE, MAE for regression. Cross-validation helps assess model generalization. ROC curves and confusion matrices provide detailed performance analysis.",
+            "keywords": ["evaluation", "metrics", "accuracy", "precision", "cross-validation"]
+        }
+    }
+} 

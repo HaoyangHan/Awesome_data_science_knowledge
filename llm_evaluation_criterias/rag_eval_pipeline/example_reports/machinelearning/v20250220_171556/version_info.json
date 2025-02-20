@@ -1,0 +1,24 @@
+{
+  "version": "20250220_171556",
+  "timestamp": "2025-02-20T17:15:57.061013",
+  "test_cases_count": 5,
+  "corpus_size": 10,
+  "output_files": {
+    "csv": [
+      "metric_summaries.csv",
+      "metric_values.csv",
+      "detailed_results.csv"
+    ],
+    "plots": [
+      "mean_average_precision_distribution.png",
+      "recall_at_k_distribution.png",
+      "semantic_similarity_distribution.png",
+      "keyword_coverage_distribution.png",
+      "precision_at_k_distribution.png",
+      "metric_visualizations.png"
+    ],
+    "markdown": [
+      "evaluation_report.md"
+    ]
+  }
+}

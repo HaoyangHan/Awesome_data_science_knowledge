@@ -1,0 +1,4 @@
+precision_at_k,recall_at_k,mean_average_precision,semantic_similarity,keyword_coverage
+0.2,1.0,1.0,0.62028799273751,1.0
+0.2,1.0,1.0,0.6164566657759927,1.0
+0.2,1.0,1.0,0.5383849252354015,0.75

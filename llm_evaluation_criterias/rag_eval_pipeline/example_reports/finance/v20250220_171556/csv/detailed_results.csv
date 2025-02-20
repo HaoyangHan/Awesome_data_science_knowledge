@@ -1,0 +1,4 @@
+query_id,query,expected_content,precision_at_k,recall_at_k,mean_average_precision,semantic_similarity,keyword_coverage
+Q1,What is market capitalization and how is it calculated?,"Market capitalization represents the total value of a company's shares, calculated by multiplying share price by outstanding shares.",0.2,1.0,1.0,0.62028799273751,1.0
+Q2,How do financial derivatives work and what are their types?,"Financial derivatives are contracts deriving value from underlying assets, including futures, options, swaps, and forwards.",0.2,1.0,1.0,0.6164566657759927,1.0
+Q3,What is the Efficient Market Hypothesis and its implications?,"EMH states that stock prices reflect all available information, making it difficult to consistently outperform the market.",0.2,1.0,1.0,0.5383849252354015,0.75

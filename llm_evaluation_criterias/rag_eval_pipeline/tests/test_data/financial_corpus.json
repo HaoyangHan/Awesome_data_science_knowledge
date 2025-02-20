@@ -1,0 +1,44 @@
+{
+    "documents": {
+        "doc1": {
+            "title": "Understanding Market Capitalization",
+            "content": "Market capitalization, often referred to as market cap, represents the total value of a company's outstanding shares in the stock market. It is calculated by multiplying the current share price by the total number of outstanding shares. Market cap is a crucial metric for investors as it helps categorize companies into large-cap, mid-cap, and small-cap, each representing different levels of risk and growth potential.",
+            "keywords": ["market capitalization", "market cap", "share price", "outstanding shares", "company valuation"]
+        },
+        "doc2": {
+            "title": "Introduction to P/E Ratio",
+            "content": "The Price-to-Earnings (P/E) ratio is a fundamental metric used in stock valuation. It compares a company's stock price to its earnings per share (EPS). A high P/E ratio might indicate that investors expect higher earnings growth in the future, while a low P/E ratio could suggest the stock is undervalued or that the company faces challenges. The P/E ratio helps investors assess whether a stock is expensive or cheap relative to its earnings.",
+            "keywords": ["P/E ratio", "price-to-earnings", "stock valuation", "EPS", "earnings per share"]
+        },
+        "doc3": {
+            "title": "Financial Derivatives Explained",
+            "content": "Financial derivatives are contracts whose value is derived from the performance of underlying assets such as stocks, bonds, commodities, or currencies. Common types include futures, options, swaps, and forwards. Futures contracts obligate the buyer to purchase an asset at a predetermined future price, while options give the right but not the obligation to buy or sell. Derivatives are often used for hedging risks or speculative trading.",
+            "keywords": ["derivatives", "futures", "options", "swaps", "forwards", "hedging"]
+        },
+        "doc4": {
+            "title": "Dividend Yield Analysis",
+            "content": "Dividend yield measures the dividend payment relative to a stock's price, expressed as a percentage. It is calculated by dividing the annual dividend payment by the current stock price. High dividend yields may indicate good value but could also signal potential dividend cuts. Companies with consistent dividend yields often appeal to income-focused investors seeking regular cash flows from their investments.",
+            "keywords": ["dividend yield", "dividends", "stock price", "income investing", "cash flow"]
+        },
+        "doc5": {
+            "title": "Efficient Market Hypothesis",
+            "content": "The Efficient Market Hypothesis (EMH) states that stock prices reflect all available information, making it impossible to consistently outperform the market through either technical or fundamental analysis. The theory suggests that stocks always trade at their fair value, making it difficult for investors to purchase undervalued stocks or sell stocks for inflated prices. EMH exists in three forms: weak, semi-strong, and strong.",
+            "keywords": ["efficient market hypothesis", "EMH", "market efficiency", "stock prices", "fair value"]
+        },
+        "doc6": {
+            "title": "Bond Valuation Basics",
+            "content": "Bonds are fixed-income securities that represent loans made by investors to borrowers. Bond valuation involves calculating the present value of expected future cash flows, which include regular interest payments and the return of principal at maturity. Key factors affecting bond prices include interest rates, credit quality, and time to maturity. When interest rates rise, bond prices typically fall, and vice versa.",
+            "keywords": ["bonds", "fixed income", "interest rates", "yield", "maturity"]
+        },
+        "doc7": {
+            "title": "Technical Analysis Fundamentals",
+            "content": "Technical analysis involves studying price movements and trading volumes to identify patterns and trends. Common technical indicators include moving averages, relative strength index (RSI), and MACD (Moving Average Convergence Divergence). These tools help traders make decisions about entry and exit points in the market. Technical analysts believe that historical price action can indicate future market movements.",
+            "keywords": ["technical analysis", "price patterns", "trading volume", "indicators", "trends"]
+        },
+        "doc8": {
+            "title": "Portfolio Diversification Strategies",
+            "content": "Portfolio diversification reduces risk by spreading investments across different asset classes, sectors, and geographic regions. Modern Portfolio Theory suggests that diversification can optimize returns for a given level of risk. Effective diversification considers correlations between assets, ensuring that not all investments move in the same direction under similar market conditions.",
+            "keywords": ["diversification", "portfolio management", "risk management", "asset allocation", "correlation"]
+        }
+    }
+} 
